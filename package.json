@@ -4,7 +4,7 @@
     "main": "server.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "copy": "copyfiles -f ./config/* ./dist/config/",
+        "copy": "copyfiles -f ./package.json ./dist/ && copyfiles -f ./config/* ./dist/config/",
         "build": "tsc -d -p . && npm run copy",
         "start": "npm run build && node ./dist/server.js",
         "nodemon": "npm run build && nodemon ./dist/server.js",
