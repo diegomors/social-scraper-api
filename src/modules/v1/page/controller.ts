@@ -31,10 +31,10 @@ export class PageController {
     }
 
     createRoutes(app, version='v1') {
-        app.route(`/${version}/${this.resource}/info/:id`).get(this.getPageInfo);
-        app.route(`/${version}/${this.resource}/feed/:id`).get(this.getPageFeed);
-        app.route(`/${version}/${this.resource}/feed/:id/next/:next`).get(this.getPageFeed);
-        app.route(`/${version}/${this.resource}/feed/:id/previous/:previous`).get(this.getPageFeed);
+        app.route(`/${version}/${this.resource}/:id`).get(this.getPageInfo);
+        app.route(`/${version}/${this.resource}/:id/feed`).get(this.getPageFeed);
+        app.route(`/${version}/${this.resource}/:id/feed/next/:next`).get(this.getPageFeed);
+        app.route(`/${version}/${this.resource}/:id/feed/prev/:previous`).get(this.getPageFeed);
     }
 
     async getPageInfo(req, res) {
