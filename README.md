@@ -4,7 +4,7 @@
 1. Install [Node.js](http://nodejs.org/)
 2. npm install -g typescript ts-node nodemon copyfiles
 3. git clone [facebook-api](https://knewin_diegomors@bitbucket.org/knewin/facebook-api.git)
-4. npm install
+4. cd facebook-api && npm install
 5. npm start OR npm run nodemon OR start debug with VSCode
 
     Avaliable by default in http://localhost:3000/
