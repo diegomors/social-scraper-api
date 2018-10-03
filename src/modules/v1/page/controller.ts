@@ -4,7 +4,7 @@ import * as logger from '../../../logger';
 
 const handleResponse = function(res, data) {
     if(data && !data.error) {
-        if((data != {} && !data.data) || (data.data && Array.isArray(data.data) && (<Array<any>>data.data).length > 0)) {
+        if((data != {} && !data.data) || (data.data && Array.isArray(data.data) && (<Array<any>>data.data).length > 0)) {            
             sendResponse(res, httpStatus.OK, data);
         } else {
             sendResponse(res, httpStatus.NO_CONTENT, data);
