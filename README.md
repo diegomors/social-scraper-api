@@ -11,6 +11,16 @@
 
     Enjoy!
 
+## How to deploy application
+1. cd facebook-api && npm run build
+2. copy dist folder to target server
+3. cd dist
+4. node server.js OR set PORT=8080 && node server.js
+
+    Avaliable by default in http://{server}:{port}/
+
+    Enjoy!
+
 ### To set a different PORT
 1. Include in package.json scripts [custom] before npm command
 
