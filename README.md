@@ -3,11 +3,9 @@
 ## How to start application
 1. Install [Node.js](http://nodejs.org/)
 2. npm install -g typescript ts-node nodemon copyfiles
-3. git clone [facebook-api](#)
-4. mv facebook-api {your-app-name}
-5. cd {your-app-name} 
-6. npm install
-7. npm start OR npm run [custom]
+3. git clone [facebook-api](https://knewin_diegomors@bitbucket.org/knewin/facebook-api.git)
+4. npm install
+5. npm start OR npm run nodemon OR start debug with VSCode
 
     Avaliable by default in http://localhost:3000/
 
