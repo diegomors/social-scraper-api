@@ -3,7 +3,7 @@
 ## How to start application
 1. Install [Node.js](http://nodejs.org/)
 2. npm install -g typescript ts-node nodemon copyfiles
-3. git clone [facebook-api](https://knewin_diegomors@bitbucket.org/knewin/facebook-api.git)
+3. git clone [facebook-api](#)
 4. cd facebook-api && npm install
 5. npm start OR npm run nodemon OR start debug with VSCode
 
@@ -17,7 +17,7 @@
 3. cd dist && npm install
 4. node server.js OR set PORT=8080 && node server.js
 
-    Avaliable by default in http://{server}:{port}/
+    Avaliable in http://{server}:{port}/
 
     Enjoy!
 
