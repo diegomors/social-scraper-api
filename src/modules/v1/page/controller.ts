@@ -40,17 +40,17 @@ export class PageController {
         app.route(`/${version}/${this.resource}/:id/feed/before/:before`).get(this.getPageFeed);
     }
 
-    async getPageInfo(req, res) {
+    getPageInfo(req, res) {
         try {
-            await pageService.getPageInfo(req, res, handleResponse);
+            pageService.getPageInfo(req, res, handleResponse);
         } catch (error) {
             handleError(error, req, res);
         }
     }
 
-    async getPageFeed(req, res) {
+    getPageFeed(req, res) {
         try {
-            await pageService.getPageFeed(req, res, handleResponse);
+            pageService.getPageFeed(req, res, handleResponse);
         } catch (error) {
             handleError(error, req, res);
         }
