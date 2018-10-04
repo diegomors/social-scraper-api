@@ -6,6 +6,7 @@ var FB = require('fb');
 config.load('config/app.json');
 
 var fbService = new FB.Facebook(FB.options({ 
+    //appId: config.get('fbAppId'), 
     version: config.get('graphApiVersion') 
 }));
 fbService.setAccessToken(config.get('temporaryToken'));
