@@ -1,6 +1,6 @@
 import * as httpStatus from 'http-status';
-import * as service from './service';
 import * as logger from '../../../logger';
+import pageService from './service';
 
 const handleResponse = function(res, data) {
     if(data && !data.error) {
@@ -24,10 +24,11 @@ const handleError = function(err, req, res) {
 }
 
 export class PageController {
+
     private resource:string = 'page';
 
     constructor(app) {
-        this.createRoutes(app);        
+        this.createRoutes(app);       
     }
 
     createRoutes(app, version='v1') {
@@ -41,7 +42,7 @@ export class PageController {
 
     async getPageInfo(req, res) {
         try {
-            service.getPageInfo(req, res, handleResponse);
+            await pageService.getPageInfo(req, res, handleResponse);
         } catch (error) {
             handleError(error, req, res);
         }
@@ -49,7 +50,7 @@ export class PageController {
 
     async getPageFeed(req, res) {
         try {
-            service.getPageFeed(req, res, handleResponse);
+            await pageService.getPageFeed(req, res, handleResponse);
         } catch (error) {
             handleError(error, req, res);
         }
