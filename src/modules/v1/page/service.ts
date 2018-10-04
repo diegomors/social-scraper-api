@@ -47,9 +47,10 @@ export class PageService {
         const previous = req.params.previous;
         const after = req.params.after;
         const before = req.params.before;
-    
-        let fields = { limit: 100, fields: ['id', 'message', 'created_time', 'permalink_url', 'type', 'link', 'picture',
-            'comments.limit(0).summary(true)', 'likes.limit(0).summary(true)', 'shares'] };
+
+        let fields = { limit: 100, fields: ['id', 'name', 'description', 'message', 'message_tags', 'caption', 'type',
+            'created_time', 'permalink_url', 'link', 'picture', 'place', 'comments.limit(0).summary(true)',
+            'likes.limit(0).summary(true)', 'shares.limit(0).summary(true)'] };
     
         let pagingUrl = next || previous;
         if(pagingUrl) {
