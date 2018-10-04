@@ -1,4 +1,4 @@
-# RESTful API with TypeScript, Node, Express and Facebook Node SDK
+# REST API with TypeScript, Node, Express and [Facebook Node SDK](https://github.com/node-facebook/facebook-node-sdk)
 
 ## How to start application
 1. Install [Node.js](http://nodejs.org/)
