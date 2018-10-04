@@ -1,6 +1,6 @@
-import my from './app';
+import My from './app';
 
-my.app.listen(my.port, () => console.log(`Server is running on PORT=${my.port}`));
+My.app.listen(My.port, () => console.log(`Server is running on PORT=${My.port}`));
 
 process.once('SIGUSR2', () => process.kill(process.pid, 'SIGUSR2'));
 process.on('SIGINT', () => process.exit(0));
