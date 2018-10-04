@@ -40,3 +40,5 @@ export class App {
         this.port = +(process.env.PORT || 3000);
     }
 }
+
+export default new App();

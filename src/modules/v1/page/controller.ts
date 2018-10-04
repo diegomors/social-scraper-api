@@ -1,5 +1,5 @@
 import * as httpStatus from 'http-status';
-import * as logger from '../../../logger';
+import * as logger from '../logger';
 import pageService from './service';
 
 const handleResponse = function(res, data) {
