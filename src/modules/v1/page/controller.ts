@@ -35,6 +35,8 @@ export class PageController {
         app.route(`/${version}/${this.resource}/:id/feed`).get(this.getPageFeed);
         app.route(`/${version}/${this.resource}/:id/feed/next/:next`).get(this.getPageFeed);
         app.route(`/${version}/${this.resource}/:id/feed/prev/:previous`).get(this.getPageFeed);
+        app.route(`/${version}/${this.resource}/:id/feed/after/:after`).get(this.getPageFeed);
+        app.route(`/${version}/${this.resource}/:id/feed/before/:before`).get(this.getPageFeed);
     }
 
     async getPageInfo(req, res) {

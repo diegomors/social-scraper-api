@@ -1,15 +1,13 @@
-import * as httpStatus from 'http-status';
 var request = require('request');
 var config = require('config-json');
 var FB = require('fb');
 
 config.load('config/app.json');
 
-var fbService = new FB.Facebook(FB.options({ 
-    //appId: config.get('fbAppId'), 
-    version: config.get('graphApiVersion') 
-}));
-fbService.setAccessToken(config.get('temporaryToken'));
+var fbService = new FB.Facebook({  
+    version: config.get('graphApiVersion'),
+    accessToken: config.get('temporaryToken')
+});
 
 const getPageInfo = (req, res, callback) => {
     const pageNameId = req.params.id;
@@ -26,15 +24,20 @@ const getPageFeed = (req, res, callback) => {
     const pageId = req.params.id;
     const next = req.params.next;
     const previous = req.params.previous;
+    const after = req.params.after;
+    const before = req.params.before;
 
     let fields = { limit: 100, fields: ['id', 'message', 'created_time', 'permalink_url', 'type', 'link', 'picture',
         'comments.limit(0).summary(true)', 'likes.limit(0).summary(true)', 'shares'] };
 
-    let paging = next || previous;
-    if(paging) {
-        paging = `${paging}&access_token=${config.get('temporaryToken')}`;
-        getPaging(paging, res, callback);
+    let pagingUrl = next || previous;
+    if(pagingUrl) {
+        pagingUrl = `${pagingUrl}&access_token=${config.get('temporaryToken')}`;
+        getPaging(pagingUrl, res, callback);
     } else {
+        if(after) fields["after"] = after;
+        if(before) fields["before"] = before;
+
         fbService.api(`${pageId}/feed`, fields, function (data) { 
             removeSensitiveData(data);
             callback(res, data);
