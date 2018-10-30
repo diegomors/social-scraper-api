@@ -1,0 +1,8 @@
+{
+    "graphApiVersion": "v3.1",
+    "temporaryToken": "put your user token here",
+    "TwitterConsumerKey": "put your app token key here",
+    "TwitterConsumerSecret": "put your app token secret here",
+    "TwitterAccessToken": "put your user token here",
+    "TwitterAccessTokenSecret": "put your user token secret here",
+}

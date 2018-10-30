@@ -3,7 +3,8 @@ var http = require('http');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 
-import { PageController } from './modules/v1/page/controller';
+import { PageController } from './modules/v1/facebook/page/controller';
+import { DMController } from './modules/v1/twitter/direct_message/controller';
 
 export class App {
 
@@ -34,6 +35,7 @@ export class App {
         }));
 
         new PageController(this.app);
+        new DMController(this.app);
     }
 
     private setPort() {

@@ -2,7 +2,7 @@
 data
 dist
 log
-config/app.json
+src/config/app.json
 
 # Created by https://www.gitignore.io/api/visualstudiocode
 

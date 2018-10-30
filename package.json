@@ -1,10 +1,10 @@
 {
-    "name": "facebook-api",
+    "name": "social-crawler-api",
     "version": "1.0.0",
     "main": "server.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "copy": "copyfiles -f ./package.json ./dist/ && copyfiles -f ./config/* ./dist/config/",
+        "copy": "copyfiles -f ./package.json ./dist/ && copyfiles -f ./src/config/* ./dist/config/",
         "build": "tsc -d -p . && npm run copy",
         "start": "npm run build && node ./dist/server.js",
         "nodemon": "npm run build && nodemon ./dist/server.js",
@@ -24,7 +24,8 @@
         "mongoose": "^5.0.4",
         "morgan": "^1.9.0",
         "request": "^2.88.0",
-        "rootpath": "^0.1.2"
+        "rootpath": "^0.1.2",
+        "twitter": "^1.7.1"
     },
     "devDependencies": {
         "@types/body-parser": "^1.16.8",
