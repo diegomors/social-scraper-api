@@ -1,10 +1,10 @@
 import * as request from 'request';
-import * as config from 'config-json';
 import * as FB from 'fb';
+import config from '../../../../config/service';
 
 const removeSensitiveData = function(data) {
     if(data && data.paging) {
-        let token = `access_token=${config.get('temporaryToken')}`;
+        let token = `access_token=${config.getPropertyValue('temporaryToken')}`;
         if(data.paging.next) data.paging.next = data.paging.next.replace(token, '');
         if(data.paging.previous) data.paging.previous = data.paging.previous.replace(token, '');
     }
@@ -22,11 +22,10 @@ export class PageService {
 
     private fbService: FB.Facebook;
 
-    constructor() {
-        config.load('config/app.json');
+    constructor() {        
         this.fbService = new FB.Facebook({  
-            version: config.get('graphApiVersion'),
-            accessToken: config.get('temporaryToken')
+            version: config.getPropertyValue('graphApiVersion'),
+            accessToken: config.getPropertyValue('temporaryToken')
         });
     }
 
@@ -54,7 +53,7 @@ export class PageService {
     
         let pagingUrl = next || previous;
         if(pagingUrl) {
-            pagingUrl = `${pagingUrl}&access_token=${config.get('temporaryToken')}`;
+            pagingUrl = `${pagingUrl}&access_token=${config.getPropertyValue('temporaryToken')}`;
             getPagingUrl(pagingUrl, res, callback);
         } else {
             if(after) fields["after"] = after;
