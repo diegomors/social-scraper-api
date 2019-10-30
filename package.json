@@ -21,7 +21,7 @@
         "http": "0.0.0",
         "http-status": "^1.0.1",
         "log": "^1.4.0",
-        "mongoose": "^5.6.9",
+        "mongoose": "^5.7.5",
         "morgan": "^1.9.1",
         "request": "^2.88.0",
         "rootpath": "^0.1.2",
