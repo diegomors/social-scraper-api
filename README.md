@@ -10,8 +10,8 @@
 ## How to start application
 1. Install [Node.js](http://nodejs.org/)
 2. npm install -g typescript ts-node nodemon copyfiles
-3. git clone [social-crawler-api](#)
-4. cd social-crawler-api && npm install
+3. git clone [social-scraper-api](#)
+4. cd social-scraper-api && npm install
 5. npm start OR npm run nodemon OR start debug with VSCode
 
     Avaliable by default in http://localhost:3000/
@@ -19,7 +19,7 @@
     Enjoy!
 
 ## How to deploy application
-1. cd social-crawler-api && npm run build
+1. cd social-scraper-api && npm run build
 2. copy dist folder to target server
 3. cd dist && npm install
 4. node server.js OR set PORT=8080 && node server.js
